@@ -1,5 +1,6 @@
 package ee.itcollage.level5;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Squares {
@@ -12,6 +13,12 @@ public class Squares {
      * 1, 4, 9
      */
     public static List<Integer> square(List<Integer> integers){
-        return integers;
+        List<Integer> squareList= new ArrayList<>();
+        for (Integer integer : integers) {
+            int square = integer*integer;
+            squareList.add(square);
+        }
+
+        return squareList;
     }
 }

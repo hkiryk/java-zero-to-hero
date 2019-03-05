@@ -6,7 +6,11 @@ public class SumOfNumbers {
 
     //todo make tests work
     public static Integer sum(List<Integer> integerList){
-        if (integerList == null || integerList.isEmpty()) return null;
-        return integerList.get(0);
+        if (integerList == null || integerList.isEmpty()) {return null;}
+        int sum= 0;
+        for (Integer integer : integerList) {
+            sum=sum+integer;
+        }
+        return sum;
     }
 }

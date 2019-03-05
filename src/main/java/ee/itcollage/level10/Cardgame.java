@@ -8,6 +8,14 @@ public class Cardgame {
 
     public static List<Card> buildDeck() {
         List<Card> cards = new ArrayList<>();
+        for (Rank rank : Rank.values()) {
+            for (Suit suit : Suit.values()) {
+                Card card = new Card(rank,suit);
+                cards.add(card);
+
+            }
+
+        }
         return cards;
     }
 
