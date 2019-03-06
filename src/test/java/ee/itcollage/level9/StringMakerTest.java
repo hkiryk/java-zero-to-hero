@@ -10,11 +10,9 @@ public class StringMakerTest {
     public void xStrings() {
         assertEquals("", StringMaker.make(":)", 0));
         assertEquals("", StringMaker.make(":P", -5));
-
         assertEquals("---", StringMaker.make("-", 3));
         assertEquals("------", StringMaker.make("--", 3));
         assertEquals(":D:D", StringMaker.make(":D", 2));
-
         assertEquals("            ", StringMaker.make(" ", 12));
     }
 

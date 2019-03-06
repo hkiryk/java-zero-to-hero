@@ -1,5 +1,10 @@
 package ee.itcollage.level9;
 
+import java.util.Collections;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
 public class StringMaker {
 
     //todo fix tests
@@ -9,8 +14,15 @@ public class StringMaker {
      * @param x how many times you want the string
      */
     public static String make(String s, int x) {
-        String chars = "";
-        return chars;
+
+        String  newString = Stream.generate(() -> s).limit(x).collect(Collectors.joining());
+                //newString = Collections.nCopies(x, s).stream().collect(Collectors.joining(""));
+
+        /*String newString = Stream.generate(() -> "qwe").limit(3).collect(Collectors.joining());
+
+        String newString = String.join("", Collections.nCopies(n, s));*/
+
+        return newString;
     }
 
     /**
