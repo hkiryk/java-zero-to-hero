@@ -15,5 +15,9 @@ public class CardgameTest {
         Card aceOfSpades = new Card(Rank.ACE, Suit.SPADES);
         assertTrue(cards.contains(aceOfSpades));
     }
-
+    @Test
+    public void cards_give_5() {
+        List<Card> yours = Cardgame.get5cards();
+        assertEquals(5, yours.size());
+}
 }
