@@ -29,7 +29,7 @@ public class WordFilter {
 
     public Word getFirstOfType(List<Word> words, Word.WordType type) {
         for (Word word : words) {
-            if (word.getWordType()== type)
+            if (word.getWordType() == type)
                 return word;
         }
         return null;
@@ -38,9 +38,9 @@ public class WordFilter {
         return words.get(0);*/
 
     public List<Word> getAllNotNouns(List<Word> words) {
-        List<Word > notNouns = new ArrayList<>();
+        List<Word> notNouns = new ArrayList<>();
         for (Word word : words) {
-            if (word.getWordType()!= Word.WordType.NOUN) {
+            if (word.getWordType() != Word.WordType.NOUN) {
                 notNouns.add(word);
             }
         }
@@ -48,15 +48,33 @@ public class WordFilter {
     }
 
 
-    public List<String> getNounStrings(List<Word> words){
-        return new ArrayList<>();
+    public List<String> getNounStrings(List<Word> words) {
+        List<String> nounStings = new ArrayList<>();
+        for (Word word : words) {
+            if (word.getWordType() == Word.WordType.NOUN) {
+                nounStings.add(word.getWord());
+            }
+        }
+        return nounStings;
     }
 
+
     public String getFirstVerbString(List<Word> words) {
-        return "";
+        List<String> verbsString = new ArrayList<>();
+        for (Word word : words) {
+            if (word.getWordType() == Word.WordType.VERB) {
+                verbsString.add(word.getWord());
+            }
+        }
+        return verbsString.get(0);
     }
 
     public String getFirstStringOfType(List<Word> words, Word.WordType type) {
-        return "";
+        for (Word word : words) {
+            if (word.getWordType() == type)
+                return word.getWord();
+        }
+        return null;
     }
-}
+    }
+
