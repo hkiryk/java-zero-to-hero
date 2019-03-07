@@ -20,12 +20,13 @@ public class Cardgame {
         return cards;
     }
 
-    public static List<Card> shuffle(List<Card> cards) {
+    public static List<Card> shuffle() {
+        List<Card> cards = buildDeck();
         Collections.shuffle(cards);
         return cards;
     }
     public static List<Card> get5cards () {
-        List<Card> cards = buildDeck();
+        List<Card> cards = shuffle();
         List <Card> yours = new ArrayList<>();
         Random randomGenerator = new Random();
         for (int i = 0; i < 5; i += 1){
@@ -39,7 +40,7 @@ public class Cardgame {
     public static void main(String[] args) {
         //todo 1 fix tests
         //todo 2 simulate playing poker (buildDeck, shuffle and get 5 cards)
-        System.out.println(get5cards());
+       System.out.println(get5cards());
     }
 
 }
